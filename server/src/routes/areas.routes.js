@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const { getAll, getById, create, update, remove } = require('../controllers/areas.controller')
 const { checkRole } = require('../middleware/authorize')
-
+const { isAuthenticated } = require('../middleware/auth')
 // short hand para aplicar el middleware a todas las rutas:
 router.use(isAuthenticated)
 
