@@ -9,7 +9,7 @@ function errorHandler(err, req, res, next) {
   }
 
   if (err instanceof ZodError) {
-    return res.status(400).json({ errors: err.flatten().fieldErrors })
+    return res.status(422).json({ errors: err.flatten().fieldErrors })
   }
 
   res.status(500).json({ error: 'Error interno del servidor' })
